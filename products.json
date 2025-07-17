@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "name": "Stylish T-Shirt",
+        "price": 25.99,
+        "image": "images/t-shirt.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Comfortable Jeans",
+        "price": 49.99,
+        "image": "images/jeans.jpg"
+    },
+    {
+        "id": 3,
+        "name": "Modern Sneakers",
+        "price": 79.99,
+        "image": "images/sneakers.jpg"
+    },
+    {
+        "id": 4,
+        "name": "Classic Watch",
+        "price": 199.99,
+        "image": "images/watch.jpg"
+    }
+]
