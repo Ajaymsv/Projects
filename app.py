@@ -13,7 +13,26 @@ def index():
 
 @app.route('/products')
 def get_products():
-    return json.dumps(products)
+    return render_template('products.html', products=products)
+
+@app.route('/product/<int:product_id>')
+def product_detail(product_id):
+    product = next((p for p in products if p['id'] == product_id), None)
+    if product:
+        return render_template('product_detail.html', product=product, products=products)
+    return "Product not found", 404
+
+@app.route('/cart')
+def cart():
+    return render_template('cart.html')
+
+@app.route('/checkout')
+def checkout():
+    return render_template('checkout.html')
+
+@app.route('/account')
+def account():
+    return render_template('account.html')
 
 if __name__ == '__main__':
     app.run(debug=True)

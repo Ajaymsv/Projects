@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/products">Shop</a></li>
+                <li><a href="/cart">Cart</a></li>
+                <li><a href="/account">Account</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <h1>Checkout</h1>
+        <div class="checkout-form">
+            <div class="delivery-address">
+                <h2>Delivery Address</h2>
+                <form>
+                    <input type="text" placeholder="Full Name">
+                    <input type="text" placeholder="Address">
+                    <input type="text" placeholder="City">
+                    <input type="text" placeholder="State">
+                    <input type="text" placeholder="Zip Code">
+                </form>
+            </div>
+            <div class="payment-method">
+                <h2>Payment Method</h2>
+                <form>
+                    <input type="radio" id="credit" name="payment" value="credit">
+                    <label for="credit">Credit Card</label><br>
+                    <input type="radio" id="paypal" name="payment" value="paypal">
+                    <label for="paypal">PayPal</label><br>
+                </form>
+            </div>
+        </div>
+        <div class="order-summary">
+            <h2>Order Summary</h2>
+            <p>Subtotal: $20.00</p>
+            <p>Shipping: $5.00</p>
+            <h3>Total: $25.00</h3>
+            <button class="place-order">Place Order</button>
+        </div>
+    </div>
+</body>
+</html>
