@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/products">Shop</a></li>
+                <li><a href="/cart">Cart</a></li>
+                <li><a href="/account">Account</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="filters">
+            <h3>Filters</h3>
+            <div class="filter-group">
+                <h4>Price</h4>
+                <input type="range" min="0" max="1000" value="500">
+            </div>
+            <div class="filter-group">
+                <h4>Brand</h4>
+                <input type="checkbox" id="brand1" name="brand1">
+                <label for="brand1">Brand 1</label><br>
+                <input type="checkbox" id="brand2" name="brand2">
+                <label for="brand2">Brand 2</label><br>
+            </div>
+            <div class="filter-group">
+                <h4>Rating</h4>
+                <input type="radio" id="rating5" name="rating" value="5">
+                <label for="rating5">5 Stars</label><br>
+                <input type="radio" id="rating4" name="rating" value="4">
+                <label for="rating4">4 Stars & up</label><br>
+            </div>
+        </div>
+        <div class="product-list">
+            <div class="sorting">
+                <label for="sort">Sort by:</label>
+                <select id="sort" name="sort">
+                    <option value="price_asc">Price: Low to High</option>
+                    <option value="price_desc">Price: High to Low</option>
+                    <option value="popularity">Popularity</option>
+                </select>
+            </div>
+            <div class="products">
+                {% for product in products %}
+                <div class="product">
+                    <img src="{{ url_for('static', filename='images/' + product.image) }}" alt="{{ product.name }}">
+                    <h2>{{ product.name }}</h2>
+                    <p>{{ product.description }}</p>
+                    <p>${{ product.price }}</p>
+                    <button>Add to Cart</button>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="pagination">
+                <a href="#">&laquo;</a>
+                <a href="#">1</a>
+                <a href="#" class="active">2</a>
+                <a href="#">3</a>
+                <a href="#">&raquo;</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

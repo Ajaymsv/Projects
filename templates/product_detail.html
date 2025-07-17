@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ product.name }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/products">Shop</a></li>
+                <li><a href="/cart">Cart</a></li>
+                <li><a href="/account">Account</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="product-detail">
+            <div class="product-images">
+                <img src="{{ url_for('static', filename='images/' + product.image) }}" alt="{{ product.name }}">
+            </div>
+            <div class="product-info">
+                <h1>{{ product.name }}</h1>
+                <p class="price">${{ product.price }}</p>
+                <div class="ratings">
+                    <span>★★★★☆</span> (4.0)
+                </div>
+                <p class="description">{{ product.description }}</p>
+                <div class="actions">
+                    <button class="add-to-cart">Add to Cart</button>
+                    <button class="buy-now">Buy Now</button>
+                </div>
+            </div>
+        </div>
+        <div class="product-specs">
+            <h2>Specifications</h2>
+            <ul>
+                <li>Spec 1: Value</li>
+                <li>Spec 2: Value</li>
+                <li>Spec 3: Value</li>
+            </ul>
+        </div>
+        <div class="reviews">
+            <h2>Reviews</h2>
+            <div class="review">
+                <p class="author">John Doe</p>
+                <p class="rating">★★★★★</p>
+                <p class="text">Great product!</p>
+            </div>
+        </div>
+        <div class="related-products">
+            <h2>Related Products</h2>
+            <div class="products">
+                {% for related_product in products %}
+                <div class="product">
+                    <img src="{{ url_for('static', filename='images/' + related_product.image) }}" alt="{{ related_product.name }}">
+                    <h2>{{ related_product.name }}</h2>
+                    <p>${{ related_product.price }}</p>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>

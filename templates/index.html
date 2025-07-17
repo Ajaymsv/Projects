@@ -8,19 +8,66 @@
 </head>
 <body>
     <header>
-        <h1>My eCommerce Store</h1>
-    </header>
-    <div class="container">
-        {% for product in products %}
-        <div class="product">
-            <img src="{{ url_for('static', filename='images/' + product.image) }}" alt="{{ product.name }}">
-            <h2>{{ product.name }}</h2>
-            <p>{{ product.description }}</p>
-            <p>${{ product.price }}</p>
-            <button>Add to Cart</button>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/products">Shop</a></li>
+                <li><a href="/cart">Cart</a></li>
+                <li><a href="/account">Account</a></li>
+            </ul>
+        </nav>
+        <div class="login-signup">
+            <a href="/login">Login</a>
+            <a href="/signup">Signup</a>
         </div>
-        {% endfor %}
-    </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search for products...">
+            <button>Search</button>
+        </div>
+    </header>
+
+    <section class="hero-banner">
+        <img src="{{ url_for('static', filename='images/hero.jpg') }}" alt="Hero Banner">
+        <div class="hero-text">
+            <h1>New Arrivals</h1>
+            <p>Check out our latest collection</p>
+            <a href="/products" class="btn">Shop Now</a>
+        </div>
+    </section>
+
+    <section class="featured-categories">
+        <h2>Featured Categories</h2>
+        <div class="category-list">
+            <div class="category">
+                <img src="{{ url_for('static', filename='images/category1.jpg') }}" alt="Category 1">
+                <h3>Category 1</h3>
+            </div>
+            <div class="category">
+                <img src="{{ url_for('static', filename='images/category2.jpg') }}" alt="Category 2">
+                <h3>Category 2</h3>
+            </div>
+            <div class="category">
+                <img src="{{ url_for('static', filename='images/category3.jpg') }}" alt="Category 3">
+                <h3>Category 3</h3>
+            </div>
+        </div>
+    </section>
+
+    <section class="trending-products">
+        <h2>Trending Products</h2>
+        <div class="container">
+            {% for product in products %}
+            <div class="product">
+                <img src="{{ url_for('static', filename='images/' + product.image) }}" alt="{{ product.name }}">
+                <h2>{{ product.name }}</h2>
+                <p>{{ product.description }}</p>
+                <p>${{ product.price }}</p>
+                <button>Add to Cart</button>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 </html>
