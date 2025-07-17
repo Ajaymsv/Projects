@@ -1,26 +1,58 @@
 [
     {
         "id": 1,
-        "name": "Stylish T-Shirt",
-        "price": 25.99,
-        "image": "images/t-shirt.jpg"
+        "name": "T-Shirt",
+        "description": "A comfortable and stylish t-shirt.",
+        "price": 20.00,
+        "image": "t-shirt.jpg"
     },
     {
         "id": 2,
-        "name": "Comfortable Jeans",
-        "price": 49.99,
-        "image": "images/jeans.jpg"
+        "name": "Jeans",
+        "description": "A classic pair of blue jeans.",
+        "price": 50.00,
+        "image": "jeans.jpg"
     },
     {
         "id": 3,
-        "name": "Modern Sneakers",
-        "price": 79.99,
-        "image": "images/sneakers.jpg"
+        "name": "Sneakers",
+        "description": "A pair of comfortable and stylish sneakers.",
+        "price": 80.00,
+        "image": "sneakers.jpg"
     },
     {
         "id": 4,
-        "name": "Classic Watch",
-        "price": 199.99,
-        "image": "images/watch.jpg"
+        "name": "Watch",
+        "description": "A stylish and elegant watch.",
+        "price": 120.00,
+        "image": "watch.jpg"
+    },
+    {
+        "id": 5,
+        "name": "Backpack",
+        "description": "A durable and spacious backpack.",
+        "price": 60.00,
+        "image": "backpack.jpg"
+    },
+    {
+        "id": 6,
+        "name": "Hoodie",
+        "description": "A warm and comfortable hoodie.",
+        "price": 45.00,
+        "image": "hoodie.jpg"
+    },
+    {
+        "id": 7,
+        "name": "Sunglasses",
+        "description": "A pair of stylish sunglasses.",
+        "price": 30.00,
+        "image": "sunglasses.jpg"
+    },
+    {
+        "id": 8,
+        "name": "Wallet",
+        "description": "A sleek and modern wallet.",
+        "price": 25.00,
+        "image": "wallet.jpg"
     }
 ]

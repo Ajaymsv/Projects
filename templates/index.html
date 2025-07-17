@@ -58,10 +58,11 @@
         <div class="container">
             {% for product in products %}
             <div class="product">
-                <img src="{{ url_for('static', filename='images/' + product.image) }}" alt="{{ product.name }}">
-                <h2>{{ product.name }}</h2>
-                <p>{{ product.description }}</p>
-                <p>${{ product.price }}</p>
+                <a href="/product/{{ product.id }}">
+                    <img src="{{ url_for('static', filename='images/' + product.image) }}" alt="{{ product.name }}">
+                    <h2>{{ product.name }}</h2>
+                    <p>${{ product.price }}</p>
+                </a>
                 <button>Add to Cart</button>
             </div>
             {% endfor %}
